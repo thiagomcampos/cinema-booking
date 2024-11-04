@@ -1,0 +1,23 @@
+{
+  "name": "cinema-booking",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:mongo": "mongod",
+    "start:postgres": "pg_ctl -D /usr/local/var/postgres start",
+    "dev": "concurrently \"npm run start:mongo\" \"npm run start:postgres\" \"npm run start\"",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.0",
+    "pg": "^8.13.1"
+  },
+  "type": "module"
+}
