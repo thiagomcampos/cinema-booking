@@ -16,9 +16,8 @@ This project implements a backend system for booking cinema seats, designed to h
 ## Setup
 
 1.  Install dependencies: `npm install`
-2.  Configure database connections in `src/config/database.js`.
-    - Use a `.env` file to store environment variables (see `.env.example`).
-3.  Start the server: `npm start` (or use `docker-compose up -d --build`)
+2.  Configure database connections in `Dockerfile`.
+3.  Start the server: `docker-compose up -d --build`
 
 ## API Endpoints
 
@@ -56,7 +55,7 @@ A basic frontend interface (`public/index.html`) built with Tailwind CSS allows 
 ## Running with Docker Compose
 
 1.  Make sure you have Docker and Docker Compose installed.
-2.  Create a `.env` file with your database credentials (see `.env.example`).
+2.  Update `Dockerfile` file with your database credentials.
 3.  Run `docker-compose up -d --build` to start the application.
 
 ## Additional Notes
