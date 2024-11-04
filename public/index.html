@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinema Booking</title>
+  </head>
+  <body>
+    <body class="bg-gray-100">
+      <div class="container mx-auto p-4">
+      <h1 class="text-3xl font-bold mb-4">Cinema Booking</h1>
+
+      <div id="userId" class="mb-4"> 
+        Your ID: <span id="currentUserId"></span>
+      </div>
+  
+      <div id="sessions" class="mb-4">
+      </div>
+  
+      <div id="seats" class="grid grid-cols-5 gap-2 mb-4">
+      </div>
+  
+      <button id="reserveBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hidden">
+        Reserve Seats
+      </button>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
