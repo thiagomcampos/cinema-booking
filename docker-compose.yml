@@ -1,0 +1,42 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: cinema-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  postgres:
+    image: postgres:latest
+    container_name: cinema-postgres
+    environment:
+      POSTGRES_URL: postgresql://user:password@postgres:5432/database
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: database
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./public:/app/public
+    environment:
+      - POSTGRES_URL=postgresql://user:password@postgres:5432/database
+      - MONGODB_URI=mongodb://root:example@cinema-mongodb:27017
+    depends_on:
+      - postgres
+      - mongodb
+
+volumes:
+  mongodb_data:
+  postgres_data:
